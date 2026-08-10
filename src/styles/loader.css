@@ -20,14 +20,39 @@ body.loader-locked {
 
 .loader__ring {
   position: absolute;
-  width: 9rem;
-  height: 9rem;
-  border: 1px solid var(--color-line-on-dark);
-  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  width: 12rem;
+  height: 12rem;
+  /* rotate so the progress arc starts at 12 o'clock */
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.loader__ring-track,
+.loader__ring-progress {
+  fill: none;
+}
+
+.loader__ring-track {
+  stroke: var(--color-line-on-dark);
+  stroke-width: 1;
+}
+
+.loader__ring-progress {
+  stroke: var(--color-bordeaux-soft);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 289.03;
+  stroke-dashoffset: 289.03;
+}
+
+.loader__mark {
+  position: relative;
+  z-index: 1;
 }
 
 .loader__mark .logo-mark {
-  height: 4.5rem;
+  height: 7rem;
   filter: invert(1);
 }
 

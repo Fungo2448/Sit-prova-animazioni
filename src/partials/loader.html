@@ -5,9 +5,12 @@
       })();
     </script>
     <div class="loader" id="loader" aria-hidden="true">
-      <div class="loader__ring"></div>
+      <svg class="loader__ring" viewBox="0 0 100 100" aria-hidden="true">
+        <circle class="loader__ring-track" cx="50" cy="50" r="46" />
+        <circle class="loader__ring-progress" cx="50" cy="50" r="46" />
+      </svg>
       <div class="loader__mark">
-        <img class="logo-mark" src="/brand-logo-icon.png" alt="Alessandra Romeo" width="477" height="323" />
+        <img class="logo-mark" src="/brand-logo-icon.png" alt="Alessandra Romeo" width="620" height="620" />
       </div>
       <div class="loader__count">
         <span class="loader__percent-value">0</span><span class="loader__percent-sign">%</span>

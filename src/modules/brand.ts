@@ -6,5 +6,5 @@
  * up `currentColor` the way text/SVG-stroke marks can.
  */
 export function brandMarkHtml(): string {
-  return `<img class="logo-mark" src="/brand-logo-icon.png" alt="Alessandra Romeo" width="477" height="323" />`;
+  return `<img class="logo-mark" src="/brand-logo-icon.png" alt="Alessandra Romeo" width="620" height="620" />`;
 }
