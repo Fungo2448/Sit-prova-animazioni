@@ -4,7 +4,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { initAccordion } from './modules/accordion';
 import { initContactForm } from './modules/contact-form';
-import { initCustomCursor } from './modules/cursor';
 import { initGalleryFilter } from './modules/gallery-filter';
 import { initHeroGrid } from './modules/hero-grid';
 import { mountLayout } from './modules/layout';
@@ -28,7 +27,6 @@ initLoader();
 initRevealAnimations();
 initParallax();
 initMagneticButtons();
-initCustomCursor();
 initTestimonialSlider();
 initContactForm();
 initGalleryFilter();
