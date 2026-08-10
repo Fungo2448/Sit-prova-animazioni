@@ -1,0 +1,66 @@
+:root {
+  /* Palette — classic ivory/charcoal with a dark bordeaux accent */
+  --color-cream: #f4efe6;
+  --color-cream-deep: #eae2d2;
+  --color-ink: #1b1815;
+  --color-charcoal: #100e0c;
+  --color-charcoal-soft: #201c19;
+  --color-bordeaux: #5c1a22;
+  --color-bordeaux-deep: #3d0f14;
+  --color-bordeaux-soft: #8b3a42;
+  --color-white: #ffffff;
+
+  --color-line-on-light: rgba(27, 24, 21, 0.14);
+  --color-line-on-dark: rgba(244, 239, 230, 0.16);
+
+  --color-text-on-light: var(--color-ink);
+  --color-text-muted-on-light: rgba(27, 24, 21, 0.62);
+  --color-text-on-dark: var(--color-cream);
+  --color-text-muted-on-dark: rgba(244, 239, 230, 0.66);
+
+  /* Typography */
+  --font-display: 'Playfair Display', 'Liberation Serif', Georgia, serif;
+  --font-sans: 'Jost', 'Liberation Sans', Helvetica, Arial, sans-serif;
+
+  --fs-display-xl: clamp(3rem, 2.1rem + 4.2vw, 7.5rem);
+  --fs-display-lg: clamp(2.4rem, 1.8rem + 2.8vw, 5rem);
+  --fs-display-md: clamp(1.9rem, 1.5rem + 1.8vw, 3.2rem);
+  --fs-display-sm: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+  --fs-body-lg: clamp(1.05rem, 1rem + 0.3vw, 1.25rem);
+  --fs-body: 1rem;
+  --fs-small: 0.8125rem;
+  --fs-label: 0.75rem;
+
+  --lh-tight: 1.08;
+  --lh-snug: 1.25;
+  --lh-normal: 1.55;
+
+  --tracking-label: 0.22em;
+  --tracking-wide: 0.08em;
+
+  /* Spacing scale */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1.25rem;
+  --space-md: 2rem;
+  --space-lg: 3.5rem;
+  --space-xl: 5.5rem;
+  --space-2xl: 8.5rem;
+  --space-3xl: 12rem;
+
+  /* Layout */
+  --container-max: 90rem;
+  --container-pad: clamp(1.25rem, 4vw, 4rem);
+
+  /* Motion */
+  --ease-editorial: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 0.3s;
+  --duration-base: 0.6s;
+  --duration-slow: 1s;
+
+  --z-header: 100;
+  --z-loader: 1000;
+  --z-cursor: 900;
+}

@@ -1,0 +1,13 @@
+<script>
+      (function () {
+        var seen = sessionStorage.getItem('ar-loader-seen');
+        document.documentElement.classList.add(seen ? 'loader-skip' : 'loader-pending');
+      })();
+    </script>
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader__ring"></div>
+      <div class="loader__mark">AR</div>
+      <div class="loader__count">
+        <span class="loader__percent-value">0</span><span class="loader__percent-sign">%</span>
+      </div>
+    </div>

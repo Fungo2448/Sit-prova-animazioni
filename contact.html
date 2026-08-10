@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contatta Alessandra Romeo per il tuo matrimonio di lusso &mdash; disponibile in tutto il mondo, con base tra Como e Lugano." />
+    <title>Contact &mdash; Alessandra Romeo</title>
+  </head>
+  <body>
+    <!--@include:loader-->
+    <div id="site-header"></div>
+
+    <main>
+      <section class="page-hero">
+        <div class="page-hero__media">
+          <img src="/images/hero-contact.jpg" width="1600" height="2000" alt="" data-parallax="12" />
+        </div>
+        <div class="page-hero__scrim"></div>
+        <div class="page-hero__content container">
+          <p class="eyebrow on-dark">Contatto</p>
+          <h1 class="display-xl on-dark">Raccontami la Tua Storia</h1>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container contact-panel">
+          <div class="contact-panel__intro" data-reveal>
+            <span class="eyebrow">Scriviamoci</span>
+            <h2 class="display-lg">Iniziamo a Conoscerci</h2>
+            <p class="body-lg body-muted">
+              Compila il modulo con qualche dettaglio sul vostro giorno: data, luogo e desideri. Vi risponder&ograve; personalmente entro 48 ore.
+            </p>
+            <div class="contact-panel__details">
+              <div class="contact-detail">
+                <span class="contact-detail__label nav-label">Email</span>
+                <a href="mailto:hello@alessandraromeo.com">hello@alessandraromeo.com</a>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-detail__label nav-label">Telefono</span>
+                <a href="tel:+390000000000">+39 000 000 0000</a>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-detail__label nav-label">Instagram</span>
+                <a href="https://instagram.com" target="_blank" rel="noopener">@alessandraromeophoto</a>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-detail__label nav-label">Base</span>
+                <span>Como &middot; Lugano &mdash; disponibile ovunque</span>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" data-contact-form novalidate data-reveal>
+            <div class="contact-form__row">
+              <div class="field">
+                <label for="first-name">Nome</label>
+                <input id="first-name" name="firstName" type="text" required />
+              </div>
+              <div class="field">
+                <label for="last-name">Cognome</label>
+                <input id="last-name" name="lastName" type="text" required />
+              </div>
+            </div>
+            <div class="contact-form__row">
+              <div class="field">
+                <label for="event-date">Data dell&rsquo;Evento</label>
+                <input id="event-date" name="eventDate" type="date" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="location">Luogo dell&rsquo;Evento</label>
+              <input id="location" name="location" type="text" />
+            </div>
+            <div class="field">
+              <label for="message">Messaggio</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button class="btn btn--solid" type="submit" data-magnetic>Invia Messaggio</button>
+            <p class="contact-form__status" data-form-status role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

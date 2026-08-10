@@ -1,0 +1,47 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-loader);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  background: var(--color-charcoal);
+}
+
+html.loader-skip .loader {
+  display: none;
+}
+
+body.loader-locked {
+  overflow: hidden;
+}
+
+.loader__ring {
+  position: absolute;
+  width: 9rem;
+  height: 9rem;
+  border: 1px solid var(--color-line-on-dark);
+  border-radius: 50%;
+}
+
+.loader__mark {
+  font-family: var(--font-display);
+  font-size: 3.25rem;
+  font-weight: 600;
+  color: var(--color-cream);
+  letter-spacing: 0.02em;
+}
+
+.loader__count {
+  display: flex;
+  align-items: baseline;
+  gap: 0.15em;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: var(--fs-small);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-muted-on-dark);
+  font-variant-numeric: tabular-nums;
+}

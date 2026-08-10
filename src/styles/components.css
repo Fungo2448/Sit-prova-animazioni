@@ -1,0 +1,97 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: 0.9em 1.8em;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn--solid {
+  background: var(--color-bordeaux);
+  color: var(--color-cream);
+  transition: background var(--duration-fast) var(--ease-out-soft), transform var(--duration-fast) var(--ease-out-soft);
+}
+
+.btn--solid:hover {
+  background: var(--color-bordeaux-deep);
+}
+
+.btn--ghost {
+  border-color: currentColor;
+  background: transparent;
+  transition: background var(--duration-fast) var(--ease-out-soft), color var(--duration-fast) var(--ease-out-soft);
+}
+
+.btn--ghost:hover {
+  background: var(--color-bordeaux);
+  border-color: var(--color-bordeaux);
+  color: var(--color-cream);
+}
+
+.btn--dark {
+  background: var(--color-ink);
+  color: var(--color-cream);
+}
+
+/* Elegant editorial form fields, shared by the contact page/section */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+}
+
+.field label {
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted-on-light);
+}
+
+.field input,
+.field textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-line-on-light);
+  padding-block: var(--space-2xs);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: var(--fs-body-lg);
+  transition: border-color var(--duration-fast) var(--ease-out-soft);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--color-bordeaux);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+/* Reveal-on-scroll base state (see reveal.ts) */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(2.5rem);
+}
+
+.reveal-ready[data-reveal] {
+  transition: opacity 1s var(--ease-out-soft), transform 1s var(--ease-out-soft);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
