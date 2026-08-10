@@ -48,8 +48,14 @@
   transition: color var(--duration-fast) var(--ease-out-soft);
 }
 
-.header__logo .logo-mark__text {
-  font-size: 1.5rem;
+.header__logo .logo-mark {
+  height: 1.9rem;
+  filter: invert(1);
+  transition: filter var(--duration-fast) var(--ease-out-soft);
+}
+
+#site-header.is-scrolled .header__logo .logo-mark {
+  filter: none;
 }
 
 .header__logo-word {

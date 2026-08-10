@@ -26,12 +26,9 @@ body.loader-locked {
   border-radius: 50%;
 }
 
-.loader__mark {
-  color: var(--color-cream);
-}
-
-.loader__mark .logo-mark__text {
-  font-size: 3.25rem;
+.loader__mark .logo-mark {
+  height: 4.5rem;
+  filter: invert(1);
 }
 
 .loader__count {

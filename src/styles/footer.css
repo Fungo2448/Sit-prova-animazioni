@@ -18,8 +18,9 @@
   max-width: 26rem;
 }
 
-.footer__brand .logo-mark__text {
-  font-size: 2rem;
+.footer__brand .logo-mark {
+  height: 2.6rem;
+  filter: invert(1);
 }
 
 .footer__tagline {
