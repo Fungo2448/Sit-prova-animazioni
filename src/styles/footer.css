@@ -18,10 +18,8 @@
   max-width: 26rem;
 }
 
-.footer__logo-mark {
-  font-family: var(--font-display);
+.footer__brand .logo-mark__text {
   font-size: 2rem;
-  font-weight: 600;
 }
 
 .footer__tagline {

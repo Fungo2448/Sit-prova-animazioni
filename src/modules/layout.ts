@@ -1,3 +1,4 @@
+import { brandMarkHtml } from './brand';
 import { CONTACT_ITEM, NAV_ITEMS, isActivePath } from './nav-config';
 
 function renderHeader(): string {
@@ -15,7 +16,7 @@ function renderHeader(): string {
   return `
     <div class="header__bar container">
       <a class="header__logo" href="/" aria-label="Alessandra Romeo — Home">
-        <span class="header__logo-mark">AR</span>
+        ${brandMarkHtml()}
         <span class="header__logo-word nav-label">Alessandra Romeo</span>
       </a>
 
@@ -50,7 +51,7 @@ function renderFooter(): string {
   return `
     <div class="footer__top container">
       <div class="footer__brand">
-        <span class="footer__logo-mark">AR</span>
+        ${brandMarkHtml()}
         <p class="body-muted footer__tagline">
           Fotografia di matrimonio di lusso per storie d'amore senza tempo, raccontate in tutto il mondo.
         </p>

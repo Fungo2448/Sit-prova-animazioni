@@ -1,3 +1,30 @@
+/* "AR" brand lock-up: monogram text with an aperture mark nested in the gap */
+.logo-mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+}
+
+.logo-mark__text {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.logo-mark__aperture {
+  position: absolute;
+  left: 54%;
+  top: 46%;
+  width: 0.66em;
+  height: 0.66em;
+  transform: translate(-50%, -50%);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 4;
+  pointer-events: none;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

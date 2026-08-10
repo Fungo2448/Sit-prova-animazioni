@@ -48,11 +48,8 @@
   transition: color var(--duration-fast) var(--ease-out-soft);
 }
 
-.header__logo-mark {
-  font-family: var(--font-display);
+.header__logo .logo-mark__text {
   font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
 }
 
 .header__logo-word {
