@@ -21,8 +21,13 @@
   height: 100%;
 }
 
+/* Stagger alternate columns for a woven bento look. Offsetting via `top`
+   (not margin) and growing the box by the same amount keeps it covering
+   the full height top-to-bottom — a margin-based shift would leave a gap
+   at whichever end it moves away from. */
 .hero-grid__col:nth-child(2n) {
-  margin-top: -12%;
+  top: -4rem;
+  height: calc(100% + 8rem);
 }
 
 .hero-grid__track {
