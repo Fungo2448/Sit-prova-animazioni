@@ -57,11 +57,19 @@
 .statement__marquee-track {
   display: flex;
   width: max-content;
-  animation: statement-marquee 24s linear infinite;
+  animation: statement-marquee 120s linear infinite;
 }
 
 .statement:hover .statement__marquee-track {
   animation-play-state: paused;
+}
+
+/* Two identical halves, each repeated enough times to comfortably outspan
+   any viewport — animating exactly -50% then always has more of the same
+   half already in place to continue into, with no gap before it loops. */
+.statement__marquee-half {
+  display: flex;
+  flex: none;
 }
 
 .statement__marquee-track span {
