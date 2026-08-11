@@ -21,6 +21,7 @@
   /* Typography */
   --font-display: 'Playfair Display', 'Liberation Serif', Georgia, serif;
   --font-sans: 'Jost', 'Liberation Sans', Helvetica, Arial, sans-serif;
+  --font-impact: 'Archivo Black', 'Liberation Sans', Helvetica, Arial, sans-serif;
 
   --fs-display-xl: clamp(3rem, 2.1rem + 4.2vw, 7.5rem);
   --fs-display-lg: clamp(2.4rem, 1.8rem + 2.8vw, 5rem);

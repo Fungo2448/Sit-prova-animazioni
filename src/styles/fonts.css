@@ -78,3 +78,12 @@
   font-display: swap;
   src: url('/fonts/Jost-600-normal.woff2') format('woff2');
 }
+
+/* Used sparingly, as a deliberate tonal break for the home statement section */
+@font-face {
+  font-family: 'Archivo Black';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/ArchivoBlack-400-normal.woff2') format('woff2');
+}

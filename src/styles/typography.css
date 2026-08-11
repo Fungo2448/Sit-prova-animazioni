@@ -17,11 +17,6 @@
   background: currentColor;
 }
 
-.eyebrow--center {
-  display: flex;
-  justify-content: center;
-}
-
 .display-xl {
   font-family: var(--font-display);
   font-weight: 500;

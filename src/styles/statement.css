@@ -1,0 +1,94 @@
+.statement {
+  border-top: 1px solid var(--color-bordeaux);
+  border-bottom: 1px solid var(--color-bordeaux);
+  overflow: hidden;
+}
+
+.statement__body {
+  padding-block: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2xs);
+}
+
+.statement__mask {
+  overflow: hidden;
+}
+
+/* [data-reveal] sits on the mask (always visually present) rather than the
+   line itself — the line is deliberately clipped to invisible until it
+   rises, so IntersectionObserver would never see it as "intersecting" if
+   observed directly, and the reveal would never fire. */
+.statement__mask[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+.statement__line {
+  display: block;
+  transform: translateY(115%);
+  transition: transform 1s var(--ease-out-soft);
+}
+
+.statement__mask[data-reveal].is-visible .statement__line {
+  transform: translateY(0);
+}
+
+.statement__line--serif {
+  font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.75rem);
+  color: var(--color-text-muted-on-light);
+}
+
+.statement__line--bold {
+  font-family: var(--font-impact);
+  font-size: clamp(2.4rem, 1.4rem + 5vw, 6.25rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--color-bordeaux);
+}
+
+.statement__marquee {
+  border-top: 1px solid var(--color-line-on-light);
+  padding-block: var(--space-xs);
+}
+
+.statement__marquee-track {
+  display: flex;
+  width: max-content;
+  animation: statement-marquee 24s linear infinite;
+}
+
+.statement:hover .statement__marquee-track {
+  animation-play-state: paused;
+}
+
+.statement__marquee-track span {
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-text-muted-on-light);
+  white-space: nowrap;
+}
+
+@keyframes statement-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .statement__marquee-track {
+    animation: none;
+  }
+
+  .statement__line {
+    transform: none;
+  }
+}
