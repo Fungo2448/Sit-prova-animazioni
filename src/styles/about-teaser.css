@@ -54,11 +54,68 @@
   display: none;
 }
 
+/* Text reveal: each line/element sits inside a clipped mask and rises up
+   from behind it, mirroring the technique already used in statement.css.
+   [data-reveal] stays on the mask (always visually present) rather than the
+   inner element, which is deliberately clipped to invisible at rest — see
+   the note in statement.css for why the observer needs the visible wrapper. */
+.about-teaser__mask {
+  overflow: hidden;
+}
+
+.about-teaser__mask[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+.about-teaser__rise {
+  transform: translateY(120%);
+  transition: transform 1s var(--ease-out-soft);
+}
+
+.about-teaser__mask[data-reveal].is-visible .about-teaser__rise {
+  transform: translateY(0);
+}
+
+/* Signature "handwriting": a soft-edged mask sweeps left to right, as if
+   the ink were being laid down while you read, instead of the whole
+   signature fading/rising in at once. */
+@property --sig-reveal {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
 .about-teaser__signature {
+  --sig-reveal: 0%;
+  display: inline-block;
   font-family: var(--font-signature);
   font-size: clamp(2rem, 1.6rem + 1.6vw, 2.75rem);
   color: var(--color-bordeaux);
   line-height: 1;
+  -webkit-mask-image: linear-gradient(to right, #000 0%, #000 calc(var(--sig-reveal) - 6%), transparent var(--sig-reveal));
+  mask-image: linear-gradient(to right, #000 0%, #000 calc(var(--sig-reveal) - 6%), transparent var(--sig-reveal));
+  transition: --sig-reveal 1.6s var(--ease-out-soft);
+}
+
+.about-teaser__signature[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+.about-teaser__signature[data-reveal].is-visible {
+  --sig-reveal: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-teaser__rise {
+    transform: none;
+  }
+
+  .about-teaser__signature {
+    transition: none;
+    --sig-reveal: 100%;
+  }
 }
 
 @media (min-width: 960px) {
