@@ -47,13 +47,6 @@
   margin-inline: auto;
 }
 
-.divider-mark {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-bordeaux);
-}
-
 @media (min-width: 720px) {
   .section {
     padding-block: var(--space-3xl);

@@ -6,6 +6,28 @@
   align-self: flex-start;
 }
 
+/* Ornamental divider: hairline — diamond — hairline */
+.divider-diamond {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+}
+
+.divider-diamond__line {
+  width: 3rem;
+  height: 1px;
+  background: var(--color-line-on-light);
+}
+
+.divider-diamond__mark {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  background: var(--color-bordeaux);
+  transform: rotate(45deg);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
