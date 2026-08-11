@@ -31,7 +31,19 @@ function renderHeader(): string {
         </button>
       </div>
     </div>
+  `;
+}
 
+/**
+ * Rendered as a sibling of #site-header (appended straight to <body>), not
+ * nested inside it: #site-header now carries a `transform` for its
+ * hide-on-scroll behaviour, and any `position: fixed` descendant of a
+ * transformed element is positioned relative to that ancestor instead of
+ * the viewport — this fullscreen overlay would end up sized and placed
+ * against the shrunk, off-screen header bar instead of covering the screen.
+ */
+function renderMobileMenu(): string {
+  return `
     <div class="mobile-menu" id="mobile-menu">
       <ul class="mobile-menu__links">
         ${NAV_ITEMS.concat(CONTACT_ITEM)
@@ -111,13 +123,35 @@ function setupMobileMenu(header: HTMLElement) {
   });
 }
 
+const HEADER_FADE_RANGE = 160; // px scrolled over which the bar background/blur fades in
+const HEADER_COLOR_SWITCH = 0.6; // fade progress past which text/logo swap to ink
+const HEADER_HIDE_AFTER = 220; // px scrolled before scroll-down starts hiding the bar
+
 function setupScrolledState(header: HTMLElement) {
-  const threshold = 48;
+  let lastY = window.scrollY;
+  let ticking = false;
+
   const update = () => {
-    header.classList.toggle('is-scrolled', window.scrollY > threshold);
+    const y = window.scrollY;
+    const fadeProgress = Math.min(1, y / HEADER_FADE_RANGE);
+    header.style.setProperty('--header-fade', String(fadeProgress));
+    header.classList.toggle('is-scrolled', fadeProgress > HEADER_COLOR_SWITCH);
+    header.classList.toggle('is-hidden', y > HEADER_HIDE_AFTER && y > lastY);
+
+    lastY = y;
+    ticking = false;
   };
+
   update();
-  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    },
+    { passive: true }
+  );
 }
 
 export function mountLayout(): void {
@@ -126,6 +160,7 @@ export function mountLayout(): void {
 
   if (headerEl) {
     headerEl.innerHTML = renderHeader();
+    document.body.insertAdjacentHTML('beforeend', renderMobileMenu());
     setupMobileMenu(headerEl);
     setupScrolledState(headerEl);
   }

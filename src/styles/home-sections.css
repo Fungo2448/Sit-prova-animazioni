@@ -1,10 +1,4 @@
-/* Story cards grid */
-.stories-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
-}
-
+/* Story cards (used by the Love Stories gallery, see gallery.css) */
 .story-card {
   display: block;
   position: relative;
@@ -36,12 +30,6 @@
 
 .story-card__location {
   color: var(--color-text-muted-on-light);
-}
-
-.section-cta {
-  display: flex;
-  justify-content: center;
-  margin-top: var(--space-lg);
 }
 
 /* Testimonial */
@@ -150,10 +138,6 @@
 }
 
 @media (min-width: 640px) {
-  .stories-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .contact-form__row {
     grid-template-columns: 1fr 1fr;
   }

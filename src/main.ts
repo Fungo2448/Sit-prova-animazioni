@@ -12,6 +12,7 @@ import { initMagneticButtons } from './modules/magnetic';
 import { initParallax } from './modules/parallax';
 import { initPortfolio3D } from './modules/portfolio-3d';
 import { initRevealAnimations } from './modules/reveal';
+import { initScrollProgress } from './modules/scroll-progress';
 import { initSmoothScroll } from './modules/smooth-scroll';
 import { initTestimonialSlider } from './modules/testimonial-slider';
 
@@ -25,6 +26,7 @@ initPortfolio3D();
 initSmoothScroll();
 initLoader();
 initRevealAnimations();
+initScrollProgress();
 initParallax();
 initMagneticButtons();
 initTestimonialSlider();

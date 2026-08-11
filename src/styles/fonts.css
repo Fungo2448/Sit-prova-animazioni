@@ -87,3 +87,12 @@
   font-display: swap;
   src: url('/fonts/ArchivoBlack-400-normal.woff2') format('woff2');
 }
+
+/* Used only for Alessandra's signature in the About teaser */
+@font-face {
+  font-family: 'Great Vibes';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/GreatVibes-400-normal.woff2') format('woff2');
+}
