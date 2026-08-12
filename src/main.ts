@@ -13,6 +13,7 @@ import { initParallax } from './modules/parallax';
 import { initPortfolio3D } from './modules/portfolio-3d';
 import { initRevealAnimations } from './modules/reveal';
 import { initScrollProgress } from './modules/scroll-progress';
+import { initSignatureInk } from './modules/signature-ink';
 import { initSmoothScroll } from './modules/smooth-scroll';
 import { initTestimonialSlider } from './modules/testimonial-slider';
 
@@ -27,6 +28,7 @@ initSmoothScroll();
 initLoader();
 initRevealAnimations();
 initScrollProgress();
+initSignatureInk();
 initParallax();
 initMagneticButtons();
 initTestimonialSlider();

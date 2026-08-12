@@ -86,6 +86,10 @@
   initial-value: 0%;
 }
 
+/* The soft trailing edge (last 6%) is what keeps re-fading in Great Vibes'
+   decorative tail strokes if it's ever left in place at --sig-reveal: 100% —
+   signature-ink.ts drops the mask entirely once the wipe transition ends,
+   so the fully-revealed state never clips the flourish on the final "o". */
 .about-teaser__signature {
   --sig-reveal: 0%;
   display: inline-block;
@@ -115,6 +119,8 @@
   .about-teaser__signature {
     transition: none;
     --sig-reveal: 100%;
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 }
 
