@@ -10,7 +10,7 @@ import { mountLayout } from './modules/layout';
 import { initLoader } from './modules/loader';
 import { initMagneticButtons } from './modules/magnetic';
 import { initParallax } from './modules/parallax';
-import { initPortfolio3D } from './modules/portfolio-3d';
+import { initPortfolioStack } from './modules/portfolio-stack';
 import { initRevealAnimations } from './modules/reveal';
 import { initScrollProgress } from './modules/scroll-progress';
 import { initSignatureInk } from './modules/signature-ink';
@@ -22,7 +22,7 @@ mountLayout();
 // Content-injecting modules run before ScrollTrigger-dependent ones so
 // pin/scrub distances are measured against the final DOM, not an empty shell.
 initHeroGrid();
-initPortfolio3D();
+initPortfolioStack();
 
 initSmoothScroll();
 initLoader();
