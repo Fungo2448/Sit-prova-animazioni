@@ -24,6 +24,14 @@
   transform: translateY(-100%);
 }
 
+/* Wins over .is-hidden's own toggling (see setHeaderSuppressed in
+   layout.ts) — a pinned/scrubbed section keeps forcing this on and off
+   for its whole duration, independent of the scroll-direction logic that
+   normally drives .is-hidden. */
+#site-header.is-suppressed {
+  transform: translateY(-100%) !important;
+}
+
 #site-header::before {
   content: '';
   position: absolute;

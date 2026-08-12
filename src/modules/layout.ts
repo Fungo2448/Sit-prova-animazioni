@@ -154,6 +154,19 @@ function setupScrolledState(header: HTMLElement) {
   );
 }
 
+let headerElRef: HTMLElement | null = null;
+
+/**
+ * Forces the header off-screen regardless of scroll direction, for sections
+ * that pin/scrub the page themselves (e.g. the portfolio stack) — there,
+ * scrolling "back up" means "previous photo", not "go back up the page",
+ * so the header's normal show-on-scroll-up behaviour would be wrong.
+ * Callers un-suppress once their section is left in either direction.
+ */
+export function setHeaderSuppressed(suppressed: boolean): void {
+  headerElRef?.classList.toggle('is-suppressed', suppressed);
+}
+
 export function mountLayout(): void {
   const headerEl = document.getElementById('site-header');
   const footerEl = document.getElementById('site-footer');
@@ -163,6 +176,7 @@ export function mountLayout(): void {
     document.body.insertAdjacentHTML('beforeend', renderMobileMenu());
     setupMobileMenu(headerEl);
     setupScrolledState(headerEl);
+    headerElRef = headerEl;
   }
 
   if (footerEl) {

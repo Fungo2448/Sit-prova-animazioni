@@ -1,6 +1,8 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { setHeaderSuppressed } from './layout';
+
 gsap.registerPlugin(ScrollTrigger);
 
 interface StackPhoto {
@@ -115,5 +117,13 @@ export function initPortfolioStack(): void {
     scrub: 1,
     pin: pinTarget,
     onUpdate: (self) => update(self.progress),
+    // Scrolling back "up" inside this section means "previous photo", not
+    // "go back up the page" — the header's normal show-on-scroll-up
+    // behaviour would fight that, so it's forced hidden for the section's
+    // whole duration and released only once actually left, either way.
+    onEnter: () => setHeaderSuppressed(true),
+    onEnterBack: () => setHeaderSuppressed(true),
+    onLeave: () => setHeaderSuppressed(false),
+    onLeaveBack: () => setHeaderSuppressed(false),
   });
 }

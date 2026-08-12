@@ -1,3 +1,59 @@
+/* A "chapter title" moment that scrolls past normally, right before the
+   pinned full-screen stack below takes over — announces the section once,
+   rather than a label sitting on top of the photos the whole time. */
+.portfolio-threshold {
+  background: var(--color-charcoal);
+  border-top: 1px solid var(--color-bordeaux);
+  border-bottom: 1px solid var(--color-bordeaux);
+  overflow: hidden;
+  padding-block: var(--space-xl);
+}
+
+.portfolio-threshold__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2xs);
+}
+
+.portfolio-threshold__mask {
+  overflow: hidden;
+}
+
+.portfolio-threshold__mask[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+.portfolio-threshold__line {
+  display: block;
+  transform: translateY(115%);
+  transition: transform 1s var(--ease-out-soft);
+}
+
+.portfolio-threshold__mask[data-reveal].is-visible .portfolio-threshold__line {
+  transform: translateY(0);
+}
+
+.portfolio-threshold__eyebrow {
+  color: var(--color-bordeaux-soft);
+}
+
+.portfolio-threshold__title {
+  font-family: var(--font-impact);
+  font-size: clamp(2.2rem, 1.3rem + 4.5vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--color-cream);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-threshold__line {
+    transform: none;
+  }
+}
+
 /* Full-viewport pinned takeover: one photo at a time, scroll-scrubbed.
    Sized to the real viewport (100svh/100vw) rather than a fixed aspect —
    naturally portrait on phones, landscape on desktop, no separate layouts. */
